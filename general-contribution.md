@@ -99,22 +99,6 @@ We are following a git branch model similar to the so-called [git workflow](http
 
 12. Delete the branch. Do not reuse a branch for several task. Usually the person who merges the PR should remember to delete the merging branch after the merge has taken place. In case that the person who is doing the merge forgets to delete your branch and you notice it please delete your old branch. Your next task requires a new one.
 
-## Generate API doc for packages
-We are constantly adding jsdoc/typedoc comments to our codebase. Almost all the packages should have *typedoc* installed as a dev dependency. To generate API doc for the package:
-
-*from package root*:
-```shell
-typedoc --options typedoc.json
-```
-
-**Note:** If the file `typedoc.json` was missing from a package please make a PR to add the file with the following content:
-
-```json
-{
-    "entryPoints": ["src/"],
-    "out": "man"
-}
-```
 
 
 
