@@ -100,6 +100,8 @@ We are following a git branch model similar to the so-called [git workflow](http
 12. Delete the branch. Do not reuse a branch for several task. Usually the person who merges the PR should remember to delete the merging branch after the merge has taken place. In case that the person who is doing the merge forgets to delete your branch and you notice it please delete your old branch. Your next task requires a new one.
 
 
+## Typedoc your code
+We don't want heavily documented code, but doc it when it make sense. In particular, *typedoc* notations are very useful for they can help in building the API reference guide. For more info see the [typedoc guide](https://typedoc.org/guides/doccomments/).
 
 
 
