@@ -1,7 +1,7 @@
 General contribution guide
 =============================================
 
-These instructions is for all the projects and repos cross the Pinglue org. They are simple and trivial, but super important stuff that ignoring them cause a lot of trouble. Please read carefully and follow.
+This document is the single source for technical contribution guide for all the projects and repos cross the Pinglue org. Some of these instructions may seem simple and trivial, but be assured that they are super important stuff and ignoring them cause a lot of confusion for everyone. Please read carefully and follow. Please bear in mind that most of the instructions below are common cross all open source communities in the world and even among commercial software companies and are not specific to our org. But we reiterate all these instructions for the sake of completeness.   
 
 > **Note:** If you find some of these points not making sense, or have an alternative suggestion, or are aware of a better solution, then share it with us for sure (through issues and/or discussions) - We definitely want to improve our common protocols which benefits all the contributors. These rules are laid out best to our knowledge and are subject to continuos improvement.
 
