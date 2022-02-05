@@ -51,25 +51,53 @@ We are following a git branch model similar to the so-called [git workflow](http
 
 1. you are assigned a task which is usually a Github issue (either you assigned yourself or you are assigned by a project member, either way)
 
-2. You should work on this task in a *separate branch*. So please create a new branch for your task. The name of the branch should have the format *task-type/task-name*, where *task-type* is either feature, bug, cleanup or some other other custom name which describes what teh task is about (most tasks use the type feature or bug though). The *task-name* should be ideally the name of the issue in kebab case. For example, if your issue title is "Add left sidebar 20%" then your branch could be called feature/add-left-sidebar ... note that the name is the kebab-case of the issue title (dropping the story value 20% or other technical values) which makes the branch even more related to the issue you are working with. 
+2. You should work on this task in a *separate branch*. So please create a new branch for your task. The name of the branch should have the format *task-type/task-name*, where *task-type* is either build|ci|docs|feat|fix|perf|refactor|test (for more info on these standard names refer to [here](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format)) Most tasks use the type feat or bug though. The *task-name* should be ideally the name of the issue in kebab case. For example, if your issue title is "Add left sidebar 20%" then your branch could be called feature/add-left-sidebar ... note that the name is the kebab-case of the issue title (dropping the story value 20% or other technical values) which makes the branch even more related to the issue you are working with. 
 
 3. Work on the your task. feel free to make several commits and push them to the remote repo (see the commit rules below). Don't forget to occasionally sync your branch with the main. Don't be afraid of branch conflicts, learn to resolve them, it is easy! Choose relevant titles for your commits, they become part of the repo history. Your commit message should describe what you have done briefly; but no need to make it like a long report/changelog. 
 
-4. Lint your code before commit. For js/ts based projects, all packages come with a lint (oe eslint) script which lints your source code inside the package. The general rule is that you should lint your code before pushing it in into the repo. This helps unified style, and also elimination of unnecessary diffs as discussed above to some extend. More details on linting process is given for each repo. If not sure please ask.
+4. For commit names we use a common format in git explained [this guide](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format). In our case only the header is required and the body and footer can be dropped if the header is clear enough. The header format is:
 
-5. You are done? Make sure your changes pass all the tests. The details about testing are given in the repositories, but usually they are as easy as running the script `npm run test` in the project root and it should be all green passed. 
+(citation: https://github.com/angular/angular/blob/master/CONTRIBUTING.md)
+```
+<type>([scope]): <short summary>
+  │       │             │
+  │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
+  │       │
+  │       └─⫸ Commit Scope: the package name affected like `pinglue`, 
+  |                         `@pinglue/cli`, `pgweb/server-pl`, etc.
+  │
+  └─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|test
+```
 
-6. Make a pull request (aka. PR) from your branch to the main branch. You can use Github website for this. Use the same name as your branch for the PR as it is informative enough (if you are making PR from a fork repo then ignore this rule, use a name following the rules stated above for branch names)
+- `type` is required and is one of the following:
+    * **build**: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+    * **ci**: Changes to our CI configuration files and scripts (examples: CircleCi, SauceLabs)
+    * **docs**: Documentation only changes
+    * **feat**: A new feature
+    * **fix**: A bug fix
+    * **perf**: A code change that improves performance
+    * **refactor**: A code change that neither fixes a bug nor adds a feature
+    * **test**: Adding missing tests or correcting existing tests
 
-7. **Most important!** Link the PR to the issue you were working on. If you are using Github to make the pull request, you can find the option for linking the PR to an issue on the right side of the form. This linking tells us that this PR is related to this task. Additionally, once the PR is accepted and merged, the task will be automatically closed (otherwise we have to close it manually) 99% of people forget to do this though. So make it a habit that never make a dangling PR (meaning a PR not linked to any issue), unless you are an external contributor and are making a PR for a new suggestion. 
+- `scope` is the name of the package you change (like `pinglue`, `@pinglue/cli`, `pgweb/server-pl`, etc.). If your change is general and is not limited to a single package then you may drop the scope.
 
-8. Ask someone for your PR review. making PR itself may not send notification to us, nobody may know you made a PR! So pick your project admin or someone you are working with and they will receive notification. 
+- `summary` is the a short description of what you committed. All small letters. No period at the end.
 
-9. Once people review your PR, they will leave comments and then send the review to you. You will receive notifications for this. Read the reviews and apply them. If you have question about any review comment you can comment back. Feel free to discuss, the reviewer might be wrong or misunderstood. feel free to make additional commits to your branch to apply the suggestions. NO NEED TO CREATE A NEW PR! As you commit changes to your branch the PR will be updated automatically. FYI, *PR is a request to merge a branch into another branch. Your branch is a collection of the commits you made. So if you more commits they all become part of the PR* 
+5. Lint your code before commit. For js/ts based projects, all packages come with a lint (oe eslint) script which lints your source code inside the package. The general rule is that you should lint your code before pushing it in into the repo. This helps unified style, and also elimination of unnecessary diffs as discussed above to some extend. More details on linting process is given for each repo. If not sure please ask.
 
-10. When you PR is finally accepted, it can be merged. Either the reviewer will merge the PR himself or will ask you to do so. Either way the PR will be merged. 
+6. You are done? Make sure your changes pass all the tests. The details about testing are given in the repositories, but usually they are as easy as running the script `npm run test` in the project root and it should be all green passed. 
 
-11. Delete the branch. Do not reuse a branch for several task. Usually the person who merges the PR should remember to delete the merging branch after the merge has taken place. In case that the person who is doing the merge forgets to delete your branch and you notice it please delete your old branch. Your next task requires a new one.
+7. Make a pull request (aka. PR) from your branch to the main branch. You can use Github website for this. Use the same name as your branch for the PR as it is informative enough (if you are making PR from a fork repo then ignore this rule, use a name following the rules stated above for branch names)
+
+8. **Most important!** Link the PR to the issue you were working on. If you are using Github to make the pull request, you can find the option for linking the PR to an issue on the right side of the form. This linking tells us that this PR is related to this task. Additionally, once the PR is accepted and merged, the task will be automatically closed (otherwise we have to close it manually) 99% of people forget to do this though. So make it a habit that never make a dangling PR (meaning a PR not linked to any issue), unless you are an external contributor and are making a PR for a new suggestion. 
+
+9. Ask someone for your PR review. making PR itself may not send notification to us, nobody may know you made a PR! So pick your project admin or someone you are working with and they will receive notification. 
+
+10. Once people review your PR, they will leave comments and then send the review to you. You will receive notifications for this. Read the reviews and apply them. If you have question about any review comment you can comment back. Feel free to discuss, the reviewer might be wrong or misunderstood. feel free to make additional commits to your branch to apply the suggestions. NO NEED TO CREATE A NEW PR! As you commit changes to your branch the PR will be updated automatically. FYI, *PR is a request to merge a branch into another branch. Your branch is a collection of the commits you made. So if you more commits they all become part of the PR* 
+
+11. When you PR is finally accepted, it can be merged. Either the reviewer will merge the PR himself or will ask you to do so. Either way the PR will be merged. 
+
+12. Delete the branch. Do not reuse a branch for several task. Usually the person who merges the PR should remember to delete the merging branch after the merge has taken place. In case that the person who is doing the merge forgets to delete your branch and you notice it please delete your old branch. Your next task requires a new one.
 
 
 
