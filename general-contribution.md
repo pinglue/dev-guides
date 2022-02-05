@@ -31,8 +31,23 @@ In open source the final product is the result of all contributors work. Everybo
 ## Communication
 Communication is important. Specially for the org members it is important to communicate for any issue or problem. In particular: if you don't understand the task assigned to you properly **please ask questions!!** Don't go by guess and conjecture. Asking question is not bad, it does not mean you lack understanding! Exact reverse: it means you are indeed detailed oriented and responsible person. During these asking questions you (or we) might find some new aspects of the task and some mistakes and errors may be identified related to the task. If you see some potential issue with task itself speak it up, the task itself could be faulty, ot there could be better ways to do it. Always discuss and consult. That being said, please read the task description carefully before asking questions; for sometimes the questions are due to an incomplete study of the task description. Also, questions related to the basics of programming or common framework, question such as how to push a change to git repository or how to define an interface in typescript are beyond our scope to answer. The answer to these questions can be found in introductory tutorials and/or websites like StackOverflow. We like to focus on questions/discussions with direct relation to our projects.
 
-## Git flow 
-We are following a git branch model similar to [this flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow). Make sure you understand the general idea. A short summary of how you work on a task would look like this:
+## How/where to pickup tasks as beginner?
+Ok now you are ready to contribute, but where to start? The starting point for new contributors is the issues with the tag `good first issue`. Starting from our [org page](https://github.com/pinglue), you may go to our repos (*pg-repo* and *pgweb-repo* are usually the most active ones for collaboration) and see their issues. Pick a `good first issue` and MAKE SURE IT IS NOT ASSIGNED TO ANYONE ELSE! (check the *assignees* section on the right side menu). 
+
+The please leave a comment on the issue that you want to take this task and some contributor will get back to you. This contributor is basically the person who guides you through the tasks (answering questions and reviewing your code, etc.). He or she will be called the *task-buddy* as if. Now if you are stuck, or not sure what to do with this task please feel free to ask for more context and guidance, we definitely want to help! So just leave comments in the issue and your task-buddy as well as other community members will try to help. 
+
+The contribution itself is done through the regular GitHub workflow (fork the repo -> commit -> make PR -> reviews -> merge PR). Some more hints are given below, but in general you are expected to know (or self-learn) git workflow, it's a basic developer skill these days.   
+
+## Task size and deadline
+The size of the task is usually given at the end of its title separated by a dash. For example a task with title `do this and that - 2x` is of size 2, and small tasks would look like `do this and that - 20%` which means this task is of size one fifth. If no such number is given then the size of the task is 1. The size (roughly) indicates the number of days/hours it takes to do the task but it depends on the developer as well. 
+
+Regarding deadline, the general rule is each task is due in three days plus its size. For example the task `do this and that - 2x` is due in 5 days since it is assigned. Small tasks (size less than 1) are due in 3 days. But bear in mind that these deadlines are not strict rules, if you need more time leave comment and discuss it with your task-buddy. As long as you communicate and have not disappeared it should be fine. But if someone takes a task and disappears for 5 days overdue without any communication then we may assume he/she gave up the task and then we will reassign the task to someone else. While we try to be flexible, the tasks need to be done in timely manner since other tasks depend and awaiting on them.
+
+Cannot do the task? No problem, just communicate it on the comment and let us assign it to someone else. You can pick another task that is more align with your interest. Do not torture yourself (and us) on a task that you are not ready for yet.
+
+
+## Git workflow 
+We are following a git branch model similar to the so-called [git workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow). Make sure you understand the general idea. A short summary of how you work on a task would look like this:
 
 1. you are assigned a task which is usually a Github issue (either you assigned yourself or you are assigned by a project member, either way)
 
